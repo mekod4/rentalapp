@@ -20,8 +20,8 @@ from catalog import views
 from django.views.generic import TemplateView
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'films', views.FilmViewSet)
+router.register(r'users', views.UserViewSet, 'user')
+router.register(r'films', views.FilmViewSet, 'film')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

@@ -1,6 +1,11 @@
 from django.contrib.auth.models import User, Group
-from .models import Film
+from .models import Film, Genre
 from rest_framework import serializers
+
+class GenreSerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = Genre
+		fields = ('name',)
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
@@ -8,7 +13,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 		fields = ('url', 'username', 'email', 'groups')
 
 
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
+class FilmSerializer(serializers.HyperlinkedModelSerializer):
+	genre = GenreSerializer(many=True)
 	class Meta:
 		model = Film
 		fields = ('title', 'summary', 'cost', 'genre')

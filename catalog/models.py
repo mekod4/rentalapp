@@ -20,7 +20,7 @@ class Film(models.Model):
 	cost = models.PositiveIntegerField(default=0)
 	due_back = models.DateField(null=True, blank=True)
 	status = models.CharField(max_length=1, choices=LOAN_STATUS, blank=True, default='a')
-	genre = models.ManyToManyField(Genre, help_text='Select a genre for the film')
+	genre = models.ManyToManyField(Genre, help_text='Select a genre for the film', blank=True)
 
 	def __str__(self):
 		return self.title

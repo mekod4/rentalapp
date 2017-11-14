@@ -6,9 +6,11 @@
 </div>
 
 <div class="card" ng-show="edit">
-	<h4> {{ film.title }} </h4>
+	<input type="text"
+               ng-model="film.title"
+               ng-change="update()" />
 	<span class="summary"> {{ film.summary }} </span>
 	<div> {{ film.cost }}</div>
-	<div ng-model="film.status" ng-change="update()"> {{ film.status }} </div>
-	<button ng-click="update()">Rent</button>
+	<input type="text" ng-model="film.status" ng-change="update()">
+	<button ng-if="film.status !== 'r'" ng-click="update($index)">Rent</button>
 </div>

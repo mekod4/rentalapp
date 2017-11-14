@@ -17,4 +17,4 @@ class FilmSerializer(serializers.HyperlinkedModelSerializer):
 	genre = GenreSerializer(many=True)
 	class Meta:
 		model = Film
-		fields = ('title', 'summary', 'cost', 'genre')
+		fields = ('id', 'title', 'summary', 'cost', 'genre', 'status')

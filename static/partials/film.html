@@ -1,0 +1,14 @@
+<div class="card" ng-hide="edit" ng-click="edit=true">
+	<h4> {{ film.title }} </h4>
+	<h1> {{film.id}}</h1>
+	<span class="summary"> {{ film.summary }} </span>
+	<div> {{ film.cost }}</div>
+</div>
+
+<div class="card" ng-show="edit">
+	<h4> {{ film.title }} </h4>
+	<span class="summary"> {{ film.summary }} </span>
+	<div> {{ film.cost }}</div>
+	<div ng-model="film.status" ng-change="update()"> {{ film.status }} </div>
+	<button ng-click="update()">Rent</button>
+</div>

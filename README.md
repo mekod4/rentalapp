@@ -25,4 +25,11 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 
+#### Dummy Data 
+
+The project has some dummy data, if you want to use it run this step
+```
+$ python manage.py loaddata db.json
+```
+
 The application will be running in http://127.0.0.1:8000/

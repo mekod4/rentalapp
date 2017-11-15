@@ -20,6 +20,7 @@
 			<div>
 				<label for="usernameRegister">Username</label>
 				<input id="usernameRegister" class="form-control" type="text" ng-model="user.username">
+				<div class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</div>
 			</div>
 
 			<div>
@@ -30,6 +31,9 @@
 			<div>
 				<label for="passwordRegister">Password</label>
 				<input id="passwordRegister" class="form-control" type="password" ng-model="user.password">
+				<small class="form-text text-muted">Your password must contain at least 8 characters. </small>
+				<small class="form-text text-muted">Your password can't be a commonly used password.</small>
+				<small class="form-text text-muted">Your password can't be entirely numeric. </small>
 			</div>
 
 			<div>

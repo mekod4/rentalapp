@@ -4,6 +4,8 @@ This is a Movie Rental Aplication based on Angular JS and Django/Python. This ap
 
 The REST is include.
 
+You need to have Python installed on Machine. (Preferebly, 3.6 and above)
+
 ![alt text](screenshot/screenshot.png "")
 
 #### Install the enviroment

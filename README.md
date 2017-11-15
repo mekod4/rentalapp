@@ -9,9 +9,12 @@ The REST is include.
 #### Install the enviroment
 
 Skip this step if you don't care about virtualenv
+```
 For Windows: pip install virtualenvwrapper
 For Unix: pip install virtualenvwrapper-win
+```
 
+#### Install the project
 ```
 $ git clone https://github.com/manuhazen/rentalapp.git
 $ cd rentalapp

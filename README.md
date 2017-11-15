@@ -25,6 +25,7 @@ $ mkvirtualenv examplename
 $ pip install -r requirements.txt
 $ python manage.py makemigrations
 $ python manage.py migrate
+Note: in this step i recommend load the dummydata in the site, is in the next step-section
 $ python manage.py createsuperuser
 $ python manage.py runserver
 ```

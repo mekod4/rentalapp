@@ -5,8 +5,18 @@ from django.utils.decorators import method_decorator
 
 from rest_framework import status, views, viewsets, permissions
 from rest_framework.response import Response
+from rest_framework.generics import CreateAPIView
 
 from .serializers import UserSerializer
+
+
+class RegistrationView(CreateAPIView):
+    """
+    Create user endpoint
+    """
+    model = User
+    permission_classes = [permissions.AllowAny]
+    serializer_class = UserSerializer
 
 
 class LoginView(views.APIView):

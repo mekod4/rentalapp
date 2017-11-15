@@ -10,7 +10,7 @@
         $scope.login = function () {
             Login.login($scope.user)
                 .then(function () {
-                        $location.url('/');
+                        $location.url('/store');
                     },
                     function () {
                         $scope.login_error = "Invalid username/password combination";

@@ -8,12 +8,19 @@
 	function config($routeProvider) {
 		$routeProvider
 			.when('/', {
+				templateUrl: '/static/partials/frontpage.html'
+			})
+			.when('/store', {
 				templateUrl: '/static/partials/catalog.html',
 				controller: 'filmsController'
 			})
 			.when('/login', {
 				templateUrl: '/static/partials/login.html',
 				controller: 'loginController'
+			})
+			.when('/registration', {
+				templateUrl: '/static/partials/registration.html',
+				controller: 'registrationController'
 			})
 			.otherwise('/')
 	}

@@ -10,8 +10,8 @@ The REST is include.
 
 Skip this step if you don't care about virtualenv
 ```
-For Windows: pip install virtualenvwrapper
-For Unix: pip install virtualenvwrapper-win
+For Windows: pip install virtualenvwrapper-win
+For Unix: pip install virtualenvwrapper
 ```
 
 #### Install the project

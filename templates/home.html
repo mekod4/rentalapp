@@ -11,6 +11,9 @@
 <body>
     
     <div class="" ng-app="rentApp">
+        <div class="logout">
+            <button ng-show='logged()' ng-click="logout()">Logout</button>
+        </div>
         <ng-view></ng-view>
     </div>
 
@@ -21,7 +24,7 @@
     <script src="{% static 'js/login.controller.js' %}"></script>
     <script src="{% static 'js/login.service.js' %}"></script>
     <script src="{% static 'js/registration.controller.js' %}"></script>
-
+    <script src="{% static 'js/home.controller.js' %}"></script>
     <script src="{% static 'js/film.directive.js' %}"></script>
 
 

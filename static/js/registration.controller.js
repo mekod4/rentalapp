@@ -13,7 +13,7 @@
                         $location.url('/login');
                     },
                     function () {
-                        $scope.registration_error = "Invalid username/password combination";
+                        $scope.registration_error = "All Fields are neccesary";
                     })
         }
 

@@ -18,7 +18,7 @@
         }
 
 		if (Login.isLoggedIn()) {
-			$location.url('/');
+			$location.url('/store');
 		}
 	}
 })();

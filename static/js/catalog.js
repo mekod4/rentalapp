@@ -13,7 +13,13 @@
 
             list.cards.push(card);
         };
-
+        $scope.logged = function(){
+            if (Login.isLoggedIn()) {
+                return true
+            } else if (!Login.isLoggedIn()) {
+                return false;
+            }
+        }
         $scope.logout = function(){
             delete localStorage.currentUser;
             $http.get('/auth/logout/')
@@ -24,6 +30,8 @@
         Login.redirectIfNotLoggedIn();
         console.log('klk')
         $scope.data = [];
+
+
         $http.get('/api/films').then(
             function(response){
               $scope.data = response.data;

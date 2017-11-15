@@ -8,7 +8,8 @@
 	function config($routeProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: '/static/partials/frontpage.html'
+				templateUrl: '/static/partials/frontpage.html',
+				controller: 'homeController'
 			})
 			.when('/store', {
 				templateUrl: '/static/partials/catalog.html',

@@ -21,7 +21,7 @@ For Unix: pip install virtualenvwrapper
 ```
 $ git clone https://github.com/manuhazen/rentalapp.git
 $ cd rentalapp
-$ mkvirtualenv examplename
+$ mkvirtualenv examplename (skip this one if you skipped the virtualenv installation)
 $ pip install -r requirements.txt
 $ python manage.py makemigrations
 $ python manage.py migrate

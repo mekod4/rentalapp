@@ -9,10 +9,12 @@
 			restrict: 'E',
 			controller: ['$scope', '$http', '$timeout', 'Login', function($scope, $http, $timeout, Login){
 				var url = '/api/films/' + $scope.film.id + '/';
-				$scope.currentDate = new Date().getTime();
 				var currentUser = Login.currentUser().id;
+
+				$scope.currentDate = new Date().getTime();
 				$scope.currentUser = currentUser;
-				console.log(currentUser)
+				$scope.overdueCost = ($scope.film.cost + ($scope.film.cost * 0.05));
+				
 				Date.prototype.addDays = function(days) {
 				  var dat = new Date(this.valueOf());
 				  dat.setDate(dat.getDate() + days);
@@ -28,7 +30,7 @@
 				   return (dateObj1 > dateObj2);
 				}
 
-				$scope.update = function($index, Login) {
+				$scope.update = function($index) {
 					console.log($index)
 					console.log($scope.data[$index].status)
 					$timeout(function(){

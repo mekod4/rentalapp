@@ -4,13 +4,29 @@
 	angular
 		.module('rentApp')
 		.controller('homeController', 
-			['$scope', '$location', '$http', HomeController])
+			['$scope', '$location', '$http', 'Login', HomeController])
 
-	function HomeController($scope, $location, $http) {
-        $scope.go = function(path) {
-        	$location.path(path);
+	function HomeController($scope, $location, $http, Login) {
+        $scope.logout = function(){
+            delete localStorage.currentUser;
+            $http.get('/auth/logout/')
+                .then(function(){
+                    $location.url('/login')
+                });
+        }
+        
+        $scope.homeLogged = function(){
+            if (Login.isLoggedIn()) {
+                return true;
+                console.log('true')
+            } else {
+                return false;
+                console.log('false')
+            }
         }
 
-        $scope.loginUrl = 'login';
+		if (Login.isLoggedIn()) {
+			$location.url('/');
+		}
 	}
 })();

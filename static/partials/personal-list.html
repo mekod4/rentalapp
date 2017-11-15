@@ -13,18 +13,19 @@
     </div>
   </div>
 </nav>
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-3">Mr. Movies</h1>
-    <p class="display-6">It's never been so easy to rent a film from your home in this 3 sample steps:</p>
-    <h3>Instructions:</h3>
-    <ul>
-      <li><a ng-href="#!/registration" target="_blank">Create an Account</a> or <a target="_blank" ng-href="#!/login">Log in yours!</a></li>
-      <li>Go to the <a target="_blank" ng-href="#!/store">store</a></li>
-      <li ng-if="homeLogged()" >When your finished your movie, return your film in your <a ng-href="#!/me">Films</a> or directly from our amazing <a ng-href="#!/store">Catalog</a>!</li>
-    </ul>
-  </div>
-</div>
 <div class="row">
-  
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center mt-4">
+		<h1>Rented Films</h1>
+	</div>
+	
+	<div ng-if="film.borrower === currentUser" ng-repeat="film in data" class="col-xs-12 col-sm-12 col-md-6 col-md-4 col-lg-3">
+		<div >
+			<film-card></film-card>	
+		</div>
+	</div>
+
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center mt-4">
+		<h3>You can always get new books here!</h3>
+	</div>
+
 </div>

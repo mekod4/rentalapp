@@ -10,15 +10,18 @@
         $scope.login = function () {
             Login.login($scope.user)
                 .then(function () {
-                        $location.url('/store');
+                        $location.url('/');
                     },
                     function () {
                         $scope.login_error = "Invalid username/password combination";
                     })
         }
-
-		if (Login.isLoggedIn()) {
-			$location.url('/store');
-		}
+        $scope.logout = function(){
+            delete localStorage.currentUser;
+            $http.get('/auth/logout/')
+                .then(function(){
+                    $location.url('/login')
+                });
+        }
 	}
 })();

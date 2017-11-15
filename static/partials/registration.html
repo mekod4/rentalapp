@@ -1,23 +1,42 @@
-<form ng-submit="register()">
-	<div>
-		{{ registration_error }}
-	</div>
-	<div>
-		<label>Username</label>
-		<input type="text" ng-model="user.username">
-	</div>
+<nav  class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" ng-if="homeLogged()" ng-href="#!/login">Log In</a>
+      <a class="nav-item nav-link" ng-click="logout()">Log Out</a>
+      <a class="nav-item nav-link" ng-href="#!/me">My Films</a>
+      <a class="nav-item nav-link" ng-if="homeLogged()" ng-href="#!/store">Store</a>
+    </div>
+  </div>
+</nav>
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-md-6 col-lg-6 mx-auto">
+		<form ng-submit="register()">
+			<div>
+				{{ registration_error }}
+			</div>
+			<div>
+				<label for="usernameRegister">Username</label>
+				<input id="usernameRegister" class="form-control" type="text" ng-model="user.username">
+			</div>
 
-	<div>
-		<label>Email</label>
-		<input type="email" ng-model="user.email">
-	</div>
+			<div>
+				<label for="emailRegister">Email</label>
+				<input id="emailRegister" class="form-control" type="email" ng-model="user.email">
+			</div>
 
-	<div>
-		<label>Password</label>
-		<input type="password" ng-model="user.password">
-	</div>
+			<div>
+				<label for="passwordRegister">Password</label>
+				<input id="passwordRegister" class="form-control" type="password" ng-model="user.password">
+			</div>
 
-	<div>
-		<button type="submit">Submit</button>
+			<div>
+				<button type="submit" class="mt-2 btn btn-primary">Submit</button>
+			</div>
+		</form>
 	</div>
-</form>
+</div> 	

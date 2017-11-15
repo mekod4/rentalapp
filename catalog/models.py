@@ -19,7 +19,7 @@ class Film(models.Model):
 	summary = models.TextField()
 	cost = models.PositiveIntegerField(default=0)
 	due_back = models.DateTimeField(null=True, blank=True)
-	borrower = models.ForeignKey(User, null=True)
+	borrower = models.ForeignKey(User, null=True, blank=True)
 	status = models.CharField(max_length=1, choices=LOAN_STATUS, blank=True, default='a')
 	genre = models.ManyToManyField(Genre, help_text='Select a genre for the film', blank=True)
 

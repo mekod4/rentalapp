@@ -15,6 +15,10 @@
 				templateUrl: '/static/partials/catalog.html',
 				controller: 'filmsController'
 			})
+			.when('/me', {
+				templateUrl: '/static/partials/personal-list.html',
+				controller: 'filmsController'				
+			})
 			.when('/login', {
 				templateUrl: '/static/partials/login.html',
 				controller: 'loginController'

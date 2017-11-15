@@ -1,18 +1,18 @@
-<div class="card" ng-hide="edit" ng-click="edit=true">
-	<h4> {{ film.title }} </h4>
-	<h1> {{film.id}}</h1>
-	<span class="summary"> {{ film.summary }} </span>
-	<div> {{ film.cost }}</div>
-	<div ng-if="compareDates(currentDate, film.due_back)"> Overdue: {{ film.cost + (film.cost * 0.05) }}</div>
-</div>
 
-<div class="card" ng-show="edit">
-	<input type="text"
-               ng-model="film.title"
-               ng-change="update()" />
-	<span class="summary"> {{ film.summary }} </span>
-	<div> {{ film.cost }}</div>
-	<input type="text" ng-model="film.status" ng-change="update()">
-	<button n-if="film.status !== 'r'" ng-click="update($index)">Rent</button>
-	<button n-if="film.status === 'a'" ng-click="deposit($index)">Bring back!</button>
+<div class="card" ng-class="{'bordered': film.status === 'r'}" ng-hide="edit" >
+    <div class="card-block">
+        <h4 class="card-title mt-3">{{ film.title }} <span ng-if="film.status === 'r' && film.borrower === currentUser" class="rented" >- Rented</span></h4>
+        <div class="meta">
+            <a ng-repeat="gen in film.genre"> {{gen.name}}{{$last ? '' : ', '}}</a>
+        </div>
+        <div class="card-text">
+            {{ film.summary }}
+        </div>
+    </div>
+    <div class="card-footer">
+        <span class="float-left" ng-if="film.due_back && compareDates(film.due_back, currentDate)">Cost: {{ film.cost | currency:"DOP$" }}</span>
+        <span class="float-left" ng-if="film.due_back && compareDates(currentDate, film.due_back)">Overdue Cost: {{ overdueCost }}</span>
+        <button ng-if="film.status !== 'r' && film.borrower !== currentUser" ng-click="update($index)" class="btn btn-secondary float-right btn-sm">Retrieve Book</button>
+        <button ng-if="film.status === 'r' && film.borrower === currentUser" ng-click="deposit($index)" class="btn btn-secondary float-right btn-sm">Pay &amp; Return Book</button>        
+    </div>
 </div>

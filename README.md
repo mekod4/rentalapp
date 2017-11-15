@@ -20,7 +20,7 @@ For Unix: pip install virtualenvwrapper
 ```
 $ git clone https://github.com/manuhazen/rentalapp.git
 $ cd rentalapp
-$ mkvirtualenv 'examplenamevirtualenv'
+$ mkvirtualenv _examplename_
 $ pip install -r requirements.txt
 $ python manage.py makemigrations
 $ python manage.py migrate

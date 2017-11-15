@@ -7,20 +7,19 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-    {% verbatim %}
+    
     <div class="" ng-app="rentApp">
-        <div ng-controller="filmsController">
-            <div class="list" ng-repeat="film in data">
-                <film-card></film-card>
-            </div>
-        </div>    
+        <ng-view></ng-view>
     </div>
 
-    {% endverbatim %}
-
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js"></script>
     <script src="{% static 'js/catalog.js' %}"></script>
     <script src="{% static 'js/catalog.config.js' %}"></script>
+    <script src="{% static 'js/login.controller.js' %}"></script>
+    <script src="{% static 'js/login.service.js' %}"></script>
     <script src="{% static 'js/film.directive.js' %}"></script>
+
+
 </body>
 </html>

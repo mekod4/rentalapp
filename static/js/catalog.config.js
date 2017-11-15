@@ -1,8 +1,22 @@
 (function(){
 	'use strict';
 
-	angular.module('rentApp').run(['$http', run]);
+	angular.module('rentApp')
+		.config(['$routeProvider', config])
+		.run(['$http', run]);
 
+	function config($routeProvider) {
+		$routeProvider
+			.when('/', {
+				templateUrl: '/static/partials/catalog.html',
+				controller: 'filmsController'
+			})
+			.when('/login', {
+				templateUrl: '/static/partials/login.html',
+				controller: 'loginController'
+			})
+			.otherwise('/')
+	}
 	function run($http) {
 		$http.defaults.xsrfHeaderName = 'X-CSRFToken';
 		$http.defaults.xsrfCookieName = 'csrftoken';

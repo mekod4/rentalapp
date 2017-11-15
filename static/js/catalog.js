@@ -1,11 +1,11 @@
 (function() {
     'use strict';
 
-    angular.module('rentApp', [])
+    angular.module('rentApp', ['ngRoute'])
         .controller('filmsController',
-            [ '$scope', '$http', FilmsController ]);
+            [ '$scope', '$http', '$location', 'Login', FilmsController ]);
 
-    function FilmsController($scope, $http) {
+    function FilmsController($scope, $http, $location, Login) {
         $scope.add = function (list, title) {
             var card = {
                 title: title
@@ -13,6 +13,15 @@
 
             list.cards.push(card);
         };
+
+        $scope.logout = function(){
+            delete localStorage.currentUser;
+            $http.get('/auth/logout/')
+                .then(function(){
+                    $location.url('/login')
+                });
+        }
+        Login.redirectIfNotLoggedIn();
         console.log('klk')
         $scope.data = [];
         $http.get('/api/films').then(
@@ -21,6 +30,8 @@
               console.log(response.data)
             }
         );
+
     }
+
 
 }());

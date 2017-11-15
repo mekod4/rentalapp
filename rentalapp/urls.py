@@ -18,13 +18,14 @@ from django.contrib import admin
 from rest_framework import routers
 from catalog import views
 from django.views.generic import TemplateView
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet, 'user')
 router.register(r'films', views.FilmViewSet, 'film')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^auth/', include('auth-api.urls')),
     url(r'^api/', include(router.urls)),
-    url(r'^$', TemplateView.as_view(template_name="catalog/home.html")),
+    url(r'^$', ensure_csrf_cookie(TemplateView.as_view(template_name="home.html"))),
 ]

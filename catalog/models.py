@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Genre(models.Model):
 	name = models.CharField(max_length=50)
@@ -18,7 +18,8 @@ class Film(models.Model):
 	title = models.CharField(max_length=200)
 	summary = models.TextField()
 	cost = models.PositiveIntegerField(default=0)
-	due_back = models.DateField(null=True, blank=True)
+	due_back = models.DateTimeField(null=True, blank=True)
+	borrower = models.ForeignKey(User, null=True)
 	status = models.CharField(max_length=1, choices=LOAN_STATUS, blank=True, default='a')
 	genre = models.ManyToManyField(Genre, help_text='Select a genre for the film', blank=True)
 

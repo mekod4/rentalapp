@@ -3,6 +3,7 @@
 	<h1> {{film.id}}</h1>
 	<span class="summary"> {{ film.summary }} </span>
 	<div> {{ film.cost }}</div>
+	<div ng-if="compareDates(currentDate, film.due_back)"> Overdue: {{ film.cost + (film.cost * 0.05) }}</div>
 </div>
 
 <div class="card" ng-show="edit">
@@ -12,5 +13,6 @@
 	<span class="summary"> {{ film.summary }} </span>
 	<div> {{ film.cost }}</div>
 	<input type="text" ng-model="film.status" ng-change="update()">
-	<button ng-if="film.status !== 'r'" ng-click="update($index)">Rent</button>
+	<button n-if="film.status !== 'r'" ng-click="update($index)">Rent</button>
+	<button n-if="film.status === 'a'" ng-click="deposit($index)">Bring back!</button>
 </div>

@@ -1,9 +1,9 @@
 (function() {
     'use strict';
 
-    angular.module('rentApp', ['ngRoute'])
+    angular.module('rentApp', ['ngRoute', 'angularMoment'])
         .controller('filmsController',
-            [ '$scope', '$http', '$location', 'Login', FilmsController ]);
+            [ '$scope', '$http', '$location', 'Login', 'moment', FilmsController ]);
 
     function FilmsController($scope, $http, $location, Login) {
 

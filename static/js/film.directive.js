@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 	angular.module('rentApp')
-		.directive('filmCard', ['Login', CardDirective]);
+		.directive('filmCard', ['Login', 'moment', CardDirective]);
 
 	function CardDirective(Login) {
 		return {

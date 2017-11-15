@@ -2,6 +2,8 @@
 <div class="card" ng-class="{'bordered': film.status === 'r'}" ng-hide="edit" >
     <div class="card-block">
         <h4 class="card-title mt-3">{{ film.title }} <span ng-if="film.status === 'r' && film.borrower === currentUser" class="rented" >- Rented</span></h4>
+        <h6 ng-if="film.status === 'r'" ng-class="{ 'text-danger' : film.due_back && compareDates(currentDate, film.due_back)}" 
+            class="card-subtitle mb-2 text-warning">Due date: {{ film.due_back | amUtc | amDateFormat:'MM.DD.YYYY' }}</h6>
         <div class="meta">
             <a ng-repeat="gen in film.genre"> {{gen.name}}{{$last ? '' : ', '}}</a>
         </div>

@@ -14,8 +14,8 @@
   </div>
 </nav>
 <div class="row">
-	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 mt-4" ng-repeat="film in data">
-		<film-card></film-card>
+	<div ng-repeat="film in data" ng-if="film.status === 'a'" class="col-xs-12 col-sm-12 col-md-6 col-lg-4 mt-4">
+      <film-card></film-card>
 	</div>
 </div>
   

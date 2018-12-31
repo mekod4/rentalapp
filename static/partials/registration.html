@@ -7,7 +7,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" ng-if="homeLogged()" ng-href="#!/login">Log In</a>
-      <a class="nav-item nav-link" ng-if="homeLogged()" ng-href="#!/store">Store</a>
+      <a class="nav-item nav-link" ng-if="homeLogged()" ng-href="#!/store">Bookshelf</a>
     </div>
   </div>
 </nav>
@@ -18,9 +18,9 @@
 				{{ registration_error }}
 			</div>
 			<div>
-				<label for="usernameRegister">Username</label>
+				<label for="usernameRegister">User SID</label>
 				<input id="usernameRegister" class="form-control" type="text" ng-model="user.username">
-				<div class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</div>
+				<div class="form-text text-muted">Required. 7 characters.</div>
 			</div>
 
 			<div>

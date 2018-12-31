@@ -9,20 +9,20 @@
       <a class="nav-item nav-link" ng-if="!(homeLogged())" ng-href="#!/login">Log In</a>
       <a class="nav-item nav-link" ng-if="homeLogged()" ng-click="logout()">Log Out</a>
       <a class="nav-item nav-link" ng-if="homeLogged()" ng-href="#!/me">My Films</a>
-      <a class="nav-item nav-link" ng-if="homeLogged()" ng-if="homeLogged()" ng-href="#!/store">Store</a>
+      <a class="nav-item nav-link" ng-if="homeLogged()" ng-if="homeLogged()" ng-href="#!/store">Bookshelf</a>
       <a class="nav-item nav-link" ng-if="!(homeLogged())" ng-href="#!/registration">Registration</a>
     </div>
   </div>
 </nav>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-3">Mr. Movies</h1>
-    <p class="display-6">It's never been so easy to rent a film from your home in this 3 sample steps:</p>
+    <h1 class="display-3">Annie's "Are my books stolen?"</h1>
+    <p class="display-6">It's never been so easy to track books!</p>
     <h3>Instructions:</h3>
     <ul>
       <li><a ng-href="#!/registration" target="_blank">Create an Account</a> or <a target="_blank" ng-href="#!/login">Log in yours!</a> (You're going to see the next steps after logged in)</li>
-      <li ng-if="homeLogged()">Go to the <a target="_blank" ng-href="#!/store">store</a></li>
-      <li ng-if="homeLogged()" >When your finished your movie, return your film in your <a ng-href="#!/me">Films</a> or directly from our amazing <a ng-href="#!/store">Catalog</a>!</li>
+      <li ng-if="homeLogged()">Go to the <a target="_blank" ng-href="#!/store">bookshelf</a></li>
+      <li ng-if="homeLogged()" >When your finished your book, return your book in your <a ng-href="#!/me">Books</a> or directly from our <a ng-href="#!/store">Bookshelf</a></li>
     </ul>
   </div>
 </div>

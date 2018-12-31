@@ -12,11 +12,12 @@
         </div>
     </div>
     <div class="card-footer">
-        <span class="float-left" ng-if="film.due_back && compareDates(film.due_back, currentDate)">Cost: {{ film.cost | currency:"DOP$" }}</span>
+        <!-- <span class="float-left" ng-if="film.due_back && compareDates(film.due_back, currentDate)">Cost: {{ film.cost | currency:"DOP$" }}</span> -->
+        <span class="float-left" ng-if="film.status == 'r' && film.borrower !== currentUser">Borrower: {{ borrower_sid }}</span>
         <span class="float-left" 
             ng-class="{'text-danger': film.due_back && compareDates(currentDate, film.due_back)}" 
             ng-if="film.due_back && compareDates(currentDate, film.due_back)">Overdue Cost: {{ overdueCost | currency:"DOP$" }}</span>
-        <button ng-if="film.status !== 'r' && film.borrower !== currentUser" ng-click="update($index)" class="btn btn-secondary float-right btn-sm">Get Movie</button>
-        <button ng-if="film.status === 'r' && film.borrower === currentUser" ng-click="deposit($index)" class="btn btn-secondary float-right btn-sm">Pay &amp; Return Movie</button>        
+        <button ng-if="film.status !== 'r' && film.borrower !== currentUser" ng-click="update($index)" class="btn btn-secondary float-right btn-sm">Get Book</button>
+        <button ng-if="film.status === 'r' && film.borrower === currentUser" ng-click="deposit($index)" class="btn btn-secondary float-right btn-sm">Pay &amp; Return Book</button>        
     </div>
 </div>

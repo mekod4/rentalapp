@@ -8,14 +8,14 @@
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" ng-if="!(homeLogged())" ng-href="#!/login">Log In</a>
       <a class="nav-item nav-link" ng-if="homeLogged()" ng-click="logout()">Log Out</a>
-      <a class="nav-item nav-link" ng-if="homeLogged()" ng-href="#!/me">My Films</a>
-      <a class="nav-item nav-link" ng-if="homeLogged()" ng-href="#!/store">Store</a>
+      <a class="nav-item nav-link" ng-if="homeLogged()" ng-href="#!/me">My Books</a>
+      <a class="nav-item nav-link" ng-if="homeLogged()" ng-href="#!/store">Bookshelf</a>
     </div>
   </div>
 </nav>
 <div class="row">
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center mt-4">
-		<h1>Rented Films</h1>
+		<h1>Rented Books</h1>
 	</div>
 	
 	<div ng-if="film.borrower === currentUser" ng-repeat="film in data" class="col-xs-12 col-sm-12 col-md-6 col-md-4 col-lg-3">
@@ -23,9 +23,4 @@
 			<film-card></film-card>	
 		</div>
 	</div>
-
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center mt-4">
-		<h3>You can always get new books here!</h3>
-	</div>
-
 </div>
